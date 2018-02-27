@@ -3,14 +3,6 @@ import java.util.Scanner;
 public class Checkers {
 	public Scanner s = new Scanner(System.in);
 	
-	void changePlayer() {
-		if (player == 1) {
-			player = 2;
-		} else {
-			player = 1;
-		}
-	}
-	
 	public static void main(String[] args) {
 		
 		Board b = new Board();
