@@ -26,6 +26,7 @@ public class Game {
 			
 	}
 	
+	
 	public static void drawGame () {
 		System.out.print("   0 1 2 3 4 5 6 7   <- X axis\n");
 		System.out.print("  +----------------+\n");
@@ -52,7 +53,6 @@ public class Game {
 		System.out.print("   0 1 2 3 4 5 6 7  \n");
 	}
 	
-
 	
 	private boolean belongs(int[] X, int[] Y, int[] m, int pno) {
 		if (m[X[pno]][Y[pno]] == pno) { 
@@ -100,4 +100,16 @@ public class Game {
 		
 		return true;
 	}	
+	
+	public void startGame () {
+		setPlayer(p1);
+		
+		while(true) {
+			
+			g.drawGame();
+			g.playerMove();
+			g.changePlayer();
+				
+		}
+	}
 }

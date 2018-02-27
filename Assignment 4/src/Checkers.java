@@ -8,15 +8,7 @@ public class Checkers {
 		Player p2 = new Player(2, "B");
 		
 		Game g = new Game(p1, p2);
-		setPlayer(p1);
-		
-		while(true) {
-			
-			g.drawGame();
-			g.playerMove();
-			g.changePlayer();
-				
-		}
+		g.startGame();
 		
 	}
 	
