@@ -17,7 +17,7 @@ public class Player {
 		
 	}
 	
-	static int getPlayer() {
+	int getPlayer() {
 		return id;
 	}
 	

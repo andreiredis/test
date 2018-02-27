@@ -1,8 +1,10 @@
 public class Game {
 	
-	Player p1;
-	Player p2;
-	Player currentPlayer;
+	public Game (Player p1, Player p2) {
+		this.p1 = p1;
+		this.p1 = p2;
+			
+	}
 	
 	public int[][] m = {   { 0, 1, 0, 1, 0, 1, 0, 1 },
 						   { 1, 0, 1, 0, 1, 0, 1, 0 },
@@ -11,23 +13,16 @@ public class Game {
 						   { 0, 0, 0, 0, 0, 0, 0, 0 },
 						   { 2, 0, 2, 0, 2, 0, 2, 0 },
 						   { 0, 2, 0, 2, 0, 2, 0, 2 },
-						   { 2, 0, 2, 0, 2, 0, 2, 0 }
-	};
+						   { 2, 0, 2, 0, 2, 0, 2, 0 }};
 	
-	public static int[] X = new int[3];
-	public static int[] Y = new int[3];
-	public static int[] mX = new int[3];
-	public static int[] mY = new int[3];
+	Player p1;
+	Player p2;
+	Player currentPlayer;
 	
+	int pno = currentPlayer.id;
+	int x1, y1, x2, y2; 
 	
-	public Game (Player p1, Player p2) {
-		this.p1 = p1;
-		this.p1 = p2;
-			
-	}
-	
-	
-	public static void drawGame () {
+	public static void drawGame (int[][] m) {
 		System.out.print("   0 1 2 3 4 5 6 7   <- X axis\n");
 		System.out.print("  +----------------+\n");
 		
@@ -54,8 +49,9 @@ public class Game {
 	}
 	
 	
-	private boolean belongs(int[] X, int[] Y, int[] m, int pno) {
-		if (m[X[pno]][Y[pno]] == pno) { 
+	
+	private boolean belongs(int x1, int y1, int[][] m, int pno) {
+		if (m[x1][y1] == pno) { 
 			return true;
 		} else {
 			System.out.print("\nNo piece on the position that belongs to you! \n");
@@ -63,42 +59,31 @@ public class Game {
 		}
 	}
 	
-	private boolean isCorrect () {
+	private boolean isCorrect (int x1, int y1, int[][] m, int pno, int x2, int y2) {
 		if (pno == 1) {
-			if (mX[pno] > X[pno] && mY[pno] > Y[pno]) {
-				
-			} else if (mX[pno] > X[pno] && mY[pno] < Y[pno]) {
-				
-			} else if (mX[pno] == X[pno] && mY[pno] == Y[pno]) {
-				
+			if ( (x2 > x1 && y2 > y1) || (x2 > x1 && y2 < y1) || (x2 == x1 && y2 == y1) ) {
+				return true;
 			} else {
-				System.out.print("Invalid move " + pno + "\n");
-				continue;
+				System.out.print("Invalid move " + pno + "!\n");
+				return false;
 			}
 				
 		} else if (pno == 2) {
-			if (mX[pno] < X[pno] && mY[pno] < Y[pno]) {
-				
-			} else if (mX[pno] < X[pno] && mY[pno] > Y[pno]) {
-			
-			} else if (mX[pno] == X[pno] && mY[pno] == Y[pno]) {
-				
+			if ( (x2 < x1 && y2 < y1) || (x2 < x1 && y2 > y1) || (x2 == x1 && y2 == y1) ){
+				return true;
 			} else {
-				System.out.print("\nInvalid move" + pno +"\n");
-				continue;
+				System.out.print("\nInvalid move" + pno +"!\n");
+				return false;
 			}
 		}
 	}
 	
-	public boolean move(int X,int Y) {
-		
+	public void move(int x1,int y1, int x2, int y2) {
 		// Delete current piece position
-		m[X[pno]][Y[pno]] = 0;
+		m[x1][y1] = 0;
 		
 		// Create on new position
-		m[mX[pno]][mY[pno]] = pno;
-		
-		return true;
+		m[x2][y2] = pno;
 	}	
 	
 	public void setPlayer (Player p) {
@@ -106,8 +91,10 @@ public class Game {
 	}
 	
 	public void changePlayer () {
-		if currentPlayer.equals(p1) {
+		if (currentPlayer.equals(p1)) {
 			currentPlayer = p2;
+		} else {
+			currentPlayer = p1;
 		}
 	}
 	
