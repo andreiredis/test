@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Checkers {
-	public Scanner s = new Scanner(System.in);
 	
 	public static void main(String[] args) {
 		
@@ -14,8 +13,7 @@ public class Checkers {
 		while(true) {
 			
 			b.drawGame();
-			
-			
+				
 		}
 		
 	}
