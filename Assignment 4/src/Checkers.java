@@ -16,9 +16,7 @@ public class Checkers {
 			printTab(b.m);
 			tabFooter();
 			p.change();
-			
-			System.out.print("\nTurn of Player no. " + pno + "\n");
-			
+
 			
 		}
 		
