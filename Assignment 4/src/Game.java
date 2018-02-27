@@ -2,6 +2,7 @@ public class Game {
 	
 	Player p1;
 	Player p2;
+	Player currentPlayer;
 	
 	public int[][] m = {   { 0, 1, 0, 1, 0, 1, 0, 1 },
 						   { 1, 0, 1, 0, 1, 0, 1, 0 },
@@ -17,6 +18,7 @@ public class Game {
 	public static int[] Y = new int[3];
 	public static int[] mX = new int[3];
 	public static int[] mY = new int[3];
+	
 	
 	public Game (Player p1, Player p2) {
 		this.p1 = p1;
