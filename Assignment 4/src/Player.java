@@ -1,22 +1,14 @@
-
 public class Player {
 	
-	private static int player;
+	public int id;
+	
+	public Player (int id) {
+		this.id = id;
+	}
 	
 	static int getPlayer() {
-		return player;
+		return id;
 	}
 	
-	void setPlayer(int p) {
-		player = p;
-	}
-	
-	void change () {
-		if (player == 1) {
-			player = 2;
-		} else {
-			player = 1;
-		}
-	}
 	
 }
