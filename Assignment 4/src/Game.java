@@ -26,7 +26,7 @@ public class Game {
 			
 	}
 	
-	public static void drawGame {
+	public static void drawGame () {
 		System.out.print("   0 1 2 3 4 5 6 7   <- X axis\n");
 		System.out.print("  +----------------+\n");
 		

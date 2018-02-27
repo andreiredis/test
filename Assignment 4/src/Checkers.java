@@ -12,9 +12,9 @@ public class Checkers {
 		
 		while(true) {
 			
-			b.drawGame();
-			b.playerMove();
-			b.changePlayer();
+			g.drawGame();
+			g.playerMove();
+			g.changePlayer();
 				
 		}
 		
