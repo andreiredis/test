@@ -106,7 +106,9 @@ public class Game {
 	}
 	
 	public void changePlayer () {
-		if (pno == 1) {pno= 2;} else {pno = 1;}
+		if currentPlayer.equals(p1) {
+			currentPlayer = p2;
+		}
 	}
 	
 	public void startGame () {

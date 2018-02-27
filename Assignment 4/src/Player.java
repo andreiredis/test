@@ -4,9 +4,11 @@ public class Player {
 	public String name;
 	
 	public boolean equals (Object obj) {
-		if (obj instanceof Player)
+		if (obj instanceof Player) {
 			Player ref = (Player) obj;
-			return (ref.id = id);
+			return (ref.id == id);
+		}
+		return false;
 	}
 	
 	public Player (int id, String name) {
