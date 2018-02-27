@@ -13,6 +13,4 @@ public class Player {
 		return id;
 	}
 	
-
-	
 }
