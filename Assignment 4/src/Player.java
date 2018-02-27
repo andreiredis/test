@@ -1,7 +1,6 @@
 public class Player {
 	
 	public int id;
-	public String name;
 	
 	public boolean equals (Object obj) {
 		if (obj instanceof Player) {
@@ -11,9 +10,8 @@ public class Player {
 		return false;
 	}
 	
-	public Player (int id, String name) {
+	public Player (int id) {
 		this.id = id;
-		this.name = name;
 		
 	}
 	
