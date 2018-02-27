@@ -14,7 +14,7 @@ public class Game {
 	Player p2;
 	Player currentPlayer;
 	
-	int pno = currentPlayer.id;
+	int pno = currentPlayer.getPlayer();
 
 	int x1, y1, x2, y2; 
 	
@@ -86,7 +86,7 @@ public class Game {
 		}
 	}
 	
-	public void move(int x1,int y1, int x2, int y2) {
+	public void move(int x1, int y1, int x2, int y2) {
 		// Delete current piece position
 		m[x1][y1] = 0;
 		
@@ -129,7 +129,10 @@ public class Game {
 			}
 			
 			if (isCorrect (x1, y1, x2, y2, m, pno)) {break;}
+			
+			move(x1,x2,y1,y2);
 		}
+		
 	}
 	
 	public void startGame () {
