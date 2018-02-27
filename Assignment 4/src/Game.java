@@ -105,6 +105,10 @@ public class Game {
 		currentPlayer = p;
 	}
 	
+	public void changePlayer () {
+		if (pno == 1) {pno= 2;} else {pno = 1;}
+	}
+	
 	public void startGame () {
 		
 		setPlayer(p1);
