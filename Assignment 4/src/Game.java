@@ -1,4 +1,4 @@
-public class Board {
+public class Game {
 	public int[][] m = {   { 0, 1, 0, 1, 0, 1, 0, 1 },
 			 			   { 1, 0, 1, 0, 1, 0, 1, 0 },
 			 			   { 0, 1, 0, 1, 0, 1, 0, 1 },
@@ -16,6 +16,37 @@ public class Board {
 	public static int[] Y = new int[3];
 	public static int[] mX = new int[3];
 	public static int[] mY = new int[3];
+	
+	public Game (Player p1, Player p2) {
+		
+	}
+	
+	public static void drawGame {
+		System.out.print("   0 1 2 3 4 5 6 7   <- X axis\n");
+		System.out.print("  +----------------+\n");
+		
+		for(int i = 0; i < 8; i++) {
+			// go through each matrix row
+			System.out.print(i + " |");
+			
+			// go through each cell (column with fixed row)
+			for(int j = 0; j < 8; j++) {
+				if (m[i][j] == 1 || m[i][j] == 2) { 
+					System.out.print(Integer.toString(m[i][j])); 
+				} else {
+					System.out.print(" ");
+				}
+				
+				System.out.print(" ");
+			}
+			
+			System.out.print("|\n");
+		}
+		
+		System.out.print("  +----------------+\n");
+		System.out.print("   0 1 2 3 4 5 6 7  \n");
+	}
+	
 
 	
 	private boolean belongs(int[] X, int[] Y, int[] m, int pno) {
