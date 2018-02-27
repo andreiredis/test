@@ -16,7 +16,5 @@ public class Player {
 	
 	public int getPlayer() {
 		return id;
-	}
-	
-	
+	}	
 }

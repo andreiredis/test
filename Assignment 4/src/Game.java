@@ -12,19 +12,21 @@ public class Game {
 	
 	Player p1;
 	Player p2;
-	Player currentPlayer;
+	Player currentPlayer = new Player(1); 
 	
-	int pno = currentPlayer.getPlayer();
+	int pno = currentPlayer.id;
 
 	int x1, y1, x2, y2; 
 	
-	public Game (Player p1, Player p2) {
+	public Game (Player p1, Player p2, Player cp) {
 		this.p1 = p1;
-		this.p1 = p2;
+		this.p2 = p2;
+		this.currentPlayer = cp;
 			
 	}
 	
 	private void drawGame (int[][] m) {
+		
 		System.out.print("   0 1 2 3 4 5 6 7   <- X axis\n");
 		System.out.print("  +----------------+\n");
 		
@@ -53,6 +55,7 @@ public class Game {
 	
 	
 	private boolean belongs(int x1, int y1, int[][] m, int pno) {
+		
 		if (m[x1][y1] == pno) { 
 			return true;
 		} else {
@@ -96,6 +99,8 @@ public class Game {
 	
 	public void playerMove() {
 		Scanner s = new Scanner(System.in);
+		
+		System.out.print("\nTurn of Player no. " + pno + "\n");
 		
 		// PIECE SELECTION
 		System.out.print("Coordinate of piece to move\n");
