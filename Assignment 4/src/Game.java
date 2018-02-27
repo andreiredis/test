@@ -101,14 +101,19 @@ public class Game {
 		return true;
 	}	
 	
+	public void setPlayer (Player p) {
+		currentPlayer = p;
+	}
+	
 	public void startGame () {
+		
 		setPlayer(p1);
 		
 		while(true) {
 			
-			g.drawGame();
-			g.playerMove();
-			g.changePlayer();
+			drawGame();
+			playerMove();
+			changePlayer();
 				
 		}
 	}
