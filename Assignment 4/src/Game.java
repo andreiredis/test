@@ -9,8 +9,8 @@ public class Game {
 			 			   { 2, 0, 2, 0, 2, 0, 2, 0 }
 	};
 	
-	
-	int pno = Player.getPlayer();
+	Player p1;
+	Player p2;
 	
 	public static int[] X = new int[3];
 	public static int[] Y = new int[3];
@@ -18,7 +18,9 @@ public class Game {
 	public static int[] mY = new int[3];
 	
 	public Game (Player p1, Player p2) {
-		
+		this.p1 = p1;
+		this.p1 = p2;
+			
 	}
 	
 	public static void drawGame {

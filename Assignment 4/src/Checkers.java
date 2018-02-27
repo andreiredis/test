@@ -5,18 +5,16 @@ public class Checkers {
 	
 	public static void main(String[] args) {
 		
-		Board b = new Board();
 		Player p1 = new Player(1);
 		Player p2 = new Player(2);
+		
+		Board b = new Board(p1, p2);
 		
 		
 		while(true) {
 			
-			tabHeader();
-			printTab(b.m);
-			tabFooter();
-			p.change();
-
+			b.drawGame();
+			
 			
 		}
 		
